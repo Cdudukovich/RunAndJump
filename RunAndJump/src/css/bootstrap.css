@@ -13,7 +13,10 @@
   --orange: #fd7e14;
   --yellow: #ffc107;
   --green: #28a745;
-  --teal: #20c997;
+  --teal: #20c997;.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
   --cyan: #17a2b8;
   --white: #fff;
   --gray: #6c757d;
@@ -40,6 +43,7 @@
   box-sizing: border-box; }
 
 html {
+
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;

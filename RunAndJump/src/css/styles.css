@@ -1,9 +1,8 @@
+@import url("bootstrap.min.css");
 body{
   background: rgb(135,206,235);
 background: linear-gradient(90deg, rgba(135,206,235,1) 0%, rgba(255,255,255,1) 84%) !important;
 }
-.card-img-top {
-  width: 100%;
-  height: 15vw;
-  object-fit: cover;
-}
+
+.testDiv{
+	 background: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(255,255,255,1) 84%) !important;
