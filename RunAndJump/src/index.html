@@ -12,6 +12,22 @@
     </head>
 
     <body class="testDiv" style="background: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(255,255,255,1) 84%) !important; background-repeat: no-repeat; ">
+	    
+	<script type="text/javascript">
+            function getData(data) {
+                if (data.ok) {
+                    console.log(data.results);
+                    for (var i = 0; i < data.results.length; i++) {
+                        console.log(data.results[i].title);
+                    }
+                } else {
+                    alert(data.error);
+                }
+            }
+        </script>
+        <script src="https://openapi.etsy.com/v2/shops/shoprunandJUMP/listings/active.js?callback=getData&api_key=xbs1vo0yk21uhkqsj3qhyj8r&fields=title,url,price&limit=1&includes=MainImage"></script>
+
+	    
         <div>
         <div class="container">
                 <div class="row">
