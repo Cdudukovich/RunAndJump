@@ -2060,6 +2060,9 @@ input[type="button"].btn-block {
 .dropdown,
 .dropleft {
   position: relative; }
+.navbar-default {
+  background-color: #1e3141 !important;
+}
 
 .dropdown-toggle::after {
   display: inline-block;

@@ -8,9 +8,21 @@ background: linear-gradient(90deg, rgba(135,206,235,1) 0%, rgba(255,255,255,1) 8
   height: 15vw;
   object-fit: cover;
 }
-.testDiv{
-	 
-	}
-.jumbotron {
-	background-image: assets/jumbotron_pic.png
+
+@font-face {
+    font-family: '8bit_wondernominal';
+    src: url('eight_bit-webfont.woff2') format('woff2'),
+         url('eight_bit-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.bittest {
+font-family: '8bit_wondernominal';
+font-weight:normal;
+font-style:normal;
+}
+
+.navbar-default {
+  background-color: #1e3141 !important;
 }
