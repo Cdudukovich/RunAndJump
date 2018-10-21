@@ -26,3 +26,10 @@ font-style:normal;
 .navbar-default {
   background-color: #1e3141 !important;
 }
+
+.contactform-messages {
+    display: none;
+}
+.active {
+    display: block;
+}
