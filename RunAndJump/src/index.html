@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="/css/styles.css">
         <!-- InstaWidget -->
     </head>
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <body style="background: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(255,255,255,1) 84%) !important; background-repeat: no-repeat; ">
         <div class="container">
@@ -17,6 +18,31 @@
                     
                 </div>
         </div>
+=======
+
+    <body class="testDiv" style="background: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(255,255,255,1) 84%) !important; background-repeat: no-repeat; ">
+        
+	    <script type="text/javascript">
+
+            // Get JSON from runandJUMP's Etsy page 
+            // and do something with it.
+            function getData(data) {
+                if (data.ok) {
+                    console.log(data.results);
+                    for (var i = 0; i < data.results.length; i++) {
+                        console.log(data.results[i].title);
+                    }
+                } else {
+                    alert(data.error);
+                }
+            }
+
+        </script>
+        <script src="https://openapi.etsy.com/v2/shops/shoprunandJUMP/listings/active.js?callback=getData&api_key=xbs1vo0yk21uhkqsj3qhyj8r&fields=title,url,price&limit=1&includes=MainImage"></script>
+
+	    
+	<div>
+>>>>>>> db13daa859463bd000ca6ebdf0f60b28d89ce1cc
         <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                     <a class="navbar-brand" href="index.html"><img src="assets/RunAndJump.png" style="height: 25px; width: auto;"></a>
