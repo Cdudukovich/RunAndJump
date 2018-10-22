@@ -1,43 +1,18 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en" >
     <head >
-        <title>Bootstrap 4 Layout</title>
+        <title>runandJUMP!</title>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
-        <!--<link rel="stylesheet" href="/css/bootstrap.css">-->
-        <link rel="stylesheet" href="/css/styles.css">
-        <!-- InstaWidget -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <body style="background: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(255,255,255,1) 84%) !important; background-repeat: no-repeat; ">
-        <div class="container">
-                <div class="row">
-                    
-                </div>
-        </div>
 
     <body class="testDiv" style="background: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(255,255,255,1) 84%) !important; background-repeat: no-repeat; ">
-        
-	    <script type="text/javascript">
-
-            // Get JSON from runandJUMP's Etsy page 
-            // and do something with it.
-            function getData(data) {
-                if (data.ok) {
-                    console.log(data.results);
-                    for (var i = 0; i < data.results.length; i++) {
-                        console.log(data.results[i].title);
-                    }
-                } else {
-                    alert(data.error);
-                }
-            }
-
-        </script>
-        <script src="https://openapi.etsy.com/v2/shops/shoprunandJUMP/listings/active.js?callback=getData&api_key=xbs1vo0yk21uhkqsj3qhyj8r&fields=title,url,price&limit=1&includes=MainImage"></script>
-
 	    
 	<div>
         <div class="container">
@@ -70,7 +45,6 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <!-- InstaWidget -->
                         <a href="https://instawidget.net/v/user/run.and.jump" id="link-76bdb7840602b80b3ee6e9e006601a09dc354ec57843e564740d0eb8fbd0a01d">@run.and.jump</a>
                         <script src="https://instawidget.net/js/instawidget.js?u=76bdb7840602b80b3ee6e9e006601a09dc354ec57843e564740d0eb8fbd0a01d&width=500px"></script>
                     </div>
@@ -186,10 +160,103 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </div>
     </body>
+
+
+    <!-- Footer -->
     <footer class="footer">
-      <div class="container" style="background-color:#007AFF;text-align:center"">
+      <div class="container" style="background-color:#007AFF;text-align:center">
         <small style="color:white"> RUN AND JUMP! &copy; Copyright 2018
         </small>
       </div>
     </footer>
+
+
+<!-- Some Javascript -->
+
+<!-- TODO: MODAL TITLE update -->
+<!-- Adjust size of images -->
+<!-- TODO: Change color of Nav bar (white?) -->
+<script type="text/javascript">
+
+        // Get JSON from runandJUMP's Etsy page 
+        // and do something with it.
+        function getData(data) {
+            if (data.ok) {
+                console.log("data.ok");
+                for (var i = 0; i < data.results.length; i++) {
+                    var listingTitle = data.results[i].title;
+                    var listingPrice = data.results[i].price;
+                    var listingURL = data.results[i].url;
+                    var listingImageURL = data.results[i].MainImage.url_fullxfull;
+
+                    // console.log(data.results[i].title);
+                    // console.log(data.results[i].price)
+                    // console.log(data.results[i].url);
+                    // console.log(data.results[i].MainImage.url_fullxfull);
+
+                    addCard(listingTitle, listingPrice, listingURL, listingImageURL);
+                }
+            } else {
+                alert(data.error);
+            }
+        }
+
+        function addCard(listingTitle, listingPrice, listingURL, listingImageURL) {
+            console.log("Adding card...");
+            console.log(listingImageURL);
+
+            var card = document.createElement('div');
+            card.className = 'trh';
+
+            card.innerHTML = 
+            '<div class="card"> \
+                <div class="card-body text-center"> \
+                \
+                    <img class="card-img-top" src="' + listingImageURL + '" alt="Card image cap"> \
+                \
+                    <h5 class="card-title">' + listingTitle + '</h5>\
+                \
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> \
+                        See More \
+                        </button> \
+                        <!-- Modal --> \
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> \
+                            <div class="modal-dialog" role="document"> \
+                                <div class="modal-content"> \
+                                    <div class="modal-header"> \
+                                    \
+                                        <h5 class="modal-title" id="exampleModalLabel">Hello</h5> \
+                                    \
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> \
+                                        <span aria-hidden="true">&times;</span> \
+                                        </button> \
+                                    </div> \
+                                    \
+                                    <div class="modal-body"> \
+                                    \
+                                        <img class="img-responsive" style="margin:0 auto;" src="assets/Image-3.jpg" alt="Man with banana through legs" height="400" width="400" class="img-responsive"> \
+                                    \
+                                    </div> \
+                                    \
+                                    <div class="modal-footer"> \
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>\
+                                    \
+                                        <a href="https://www.etsy.com/listing/632786727/foodgasm-shokugeki-no-soma-food-wars?ref=shop_home_active_4" class="btn btn-primary" class="btn btn-info" role="button" target="_blank">Buy!</a> \
+                                    \
+                                    </div> \
+                                </div> \
+                            </div> \
+                        </div> \
+                    </div> \
+                </div> \
+            ';
+
+            document.getElementsByClassName('row')[1].appendChild(card);
+        }
+	
+	// addRow();
+    // addCard();
+</script>
+<script src="https://openapi.etsy.com/v2/shops/shoprunandJUMP/listings/active.js?callback=getData&api_key=xbs1vo0yk21uhkqsj3qhyj8r&fields=title,url,price&includes=MainImage"></script>
+
 </html>
