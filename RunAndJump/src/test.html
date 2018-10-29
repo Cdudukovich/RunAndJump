@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+
+<script type="text/javascript">
+ function showHide() {
+   var div = document.getElementById('hidden_div');
+   if (div.style.display == 'none') {
+     div.style.display = '';
+   }
+   else {
+     div.style.display = 'none';
+   }
+ }
+</script>
+
+</head>
+
+
+<body>
+
+<form method="post" name="installer" onsubmit="showHide(); return false;">
+
+<label>Home Keyword</label>
+<br />
+<input type="text" name="hello" value="">
+<br />
+<input type="submit" value="" name="submit" />
+
+</form>
+
+<div id="hidden_div" style="display:none">
+<p>Show me when form is submitted :) </p>
+</div>
+
+</body>
